@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "frzKI2HXxfhRvSivcBMSbHnBAS2/zDJy95+9X2Jt3cUu/1l7j+RLg6mAhn98FyiAcGF1AWoKnNgYXrXMC884FA==",
+  "success": true,
+  "projectFilePath": "D:\\Documets\\Projects\\PR_min2\\Producer\\Consumer\\Consumer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ignat\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

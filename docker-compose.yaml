@@ -1,0 +1,54 @@
+version: "3.9"
+
+services:
+    producer:
+        image: producer
+        container_name: producer
+        build:
+            context: ./Producer
+            dockerfile: Dockerfile
+        ports:
+            - "8080:80"
+        networks:
+            - local
+
+    aggregator:
+        image: aggregator
+        container_name: aggregator
+        build:
+            context: ./Aggregator
+            dockerfile: Dockerfile
+        ports:
+            - "8081:80"
+        networks:
+            - local
+
+    consumer1:
+        image: consumer-1
+        container_name: consumer-1
+        build:
+            context: ./Consumer
+            dockerfile: Dockerfile
+        ports:
+            - "8082:80"
+        environment:
+            - Endpoint=http://consumer-1:80/api/send
+        networks:
+            - local
+
+    consumer2:
+        image: consumer-2
+        container_name: consumer-2
+        build:
+            context: ./Consumer
+            dockerfile: Dockerfile
+        ports:
+            - "8083:80"
+        environment:
+            - Endpoint=http://consumer-2:80/api/send
+        networks:
+            - local
+
+networks:
+    local:
+        driver: bridge
